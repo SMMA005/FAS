@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+face-recognition = "*"
+flask = "*"
+cvzone = "*"
+dlib = "*"
+cmake = "*"
+scikit-learn = "*"
+flask-mysqldb = "*"
+pyyaml = "*"
+bcrypt = "*"
+flask-sqlalchemy = "*"
+pymysql = "*"
+sqlalchemy = "*"
+flask-bcrypt = "*"
+flask-session = "*"
+flask-login = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
