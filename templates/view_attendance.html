@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Attendance</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    {% include 'nav.html' %}
+
+    <div class="container mt-5">
+        <h2>Search Attendance</h2>
+        <div class="mb-3">
+            <input type="text" class="form-control" id="attendanceQuery" placeholder="Search by user, date...">
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User Name</th>
+                    <th>Date and Time</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceResults">
+                <!-- Attendance data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function fetchAttendance(query = '') {
+                $.ajax({
+                    url: '/admin/search_attendance?query=' + query,
+                    type: 'GET',
+                    success: function(data) {
+                        var table = $('#attendanceResults');
+                        table.empty();
+                        if (data.length > 0) {
+                            data.forEach(function(record) {
+                                table.append(`<tr>
+                                    <td>${record.id}</td>
+                                    <td>${record.user_name}</td>
+                                    <td>${record.date_time}</td>
+                                </tr>`);
+                            });
+                        } else {
+                            table.append('<tr><td colspan="3">No attendance records found</td></tr>');
+                        }
+                    },
+                    error: function() {
+                        $('#attendanceResults').append('<tr><td colspan="3">Error searching attendance</td></tr>');
+                    }
+                });
+            }
+    
+            // Load all attendance records initially
+            fetchAttendance();
+    
+            // Search attendance as the admin types in the attendance query field
+            $('#attendanceQuery').on('keyup', function() {
+                var query = $(this).val();
+                fetchAttendance(query);
+            });
+        });
+    </script>
+</body>
+</html>

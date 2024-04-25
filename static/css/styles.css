@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #7D5BA6; /* Mid purple */
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #5D3A7E; /* A darker shade of mid purple for hover effect */
+}
+
+header {
+    background-color: #7D5BA6; /* Mid purple */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.feature {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #7D5BA6; /* Mid purple */
+}
+
+.feature h2 {
+    color: #7D5BA6; /* Mid purple */
+}

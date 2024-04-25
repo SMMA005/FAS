@@ -1,0 +1,90 @@
+/* Add Student Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+   
+    background-color: white; /* Keep the background consistent */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #7D5BA6; /* Mid purple */
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #5D3A7E; /* A darker shade of mid purple for hover effect */
+}
+
+header {
+    background-color: #7D5BA6; /* Mid purple */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#camera, #studentForm {
+    background-color: #F9F9F9; /* Slightly off-white background for form and camera section */
+    border: 1px solid #DDD; /* Light grey border */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#camera video, #camera canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center align video and canvas */
+}
+
+#studentForm input[type="text"], 
+#studentForm input[type="tel"], 
+#studentForm input[type="date"], 
+#studentForm button {
+    width: calc(100% - 42px); /* Adjust width to account for padding and border */
+    padding: 10px;
+    margin: 10px 0; /* Margin for spacing */
+    border: 1px solid #CCC; /* Light grey border */
+    background-color: white; /* White background for inputs */
+}
+
+#studentForm button {
+    background-color: #7D5BA6; /* Mid purple */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#studentForm button:hover {
+    background-color: #5D3A7E; /* A darker shade of mid purple for hover effect */
+}
+
+/* Camera capture button */
+#snap {
+    padding: 10px 20px;
+    background-color: #7D5BA6; /* Mid purple */
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: auto;
+    margin: 20px auto; /* Center button */
+}
+
+#snap:hover {
+    background-color: #5D3A7E; /* A darker shade of mid purple */
+}
